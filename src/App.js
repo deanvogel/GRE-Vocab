@@ -1,25 +1,44 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+class Menu extends React.Component{
+  render(){
+    return <div className = "menu">
+      <div class = "leftmenu"><text><b>GRE Vocab</b></text></div>
+      <div class = "rightmenu">
+        <button onClick={() => console.log('click')}>Start Game</button>
+        <button onClick={() => console.log('click')}> Settings</button>
+      </div>
+    </div>
+  }
+}
+
+// function StartGame(){
+
+// }
 
 function App() {
   return (
-    <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div>
+          <Menu />
+        </div>
       </header>
-    </div>
   );
 }
+
+// class WordBlock extends React.Component{
+//   constructor(props) {
+//     super(props);
+//     this.word = {
+//       word: props.word.toLowerCase(),
+//     };
+//   }
+//   render(){
+//     return <button className = "wordblock"><text> {this.word} </text> </button>
+//   }
+// }
+
+
 
 export default App;
