@@ -1,21 +1,9 @@
 // import logo from './logo.svg';
+import grelogo from './assets/GRE_logo.png'
 import './App.css';
 import React from 'react';
-class Menu extends React.Component{
-  render(){
-    return <div className = "menu">
-      <div class = "leftmenu"><text><b>GRE Vocab</b></text></div>
-      <div class = "rightmenu">
-        <button onClick={() => console.log('click')}>Start Game</button>
-        <button onClick={() => console.log('click')}> Settings</button>
-      </div>
-    </div>
-  }
-}
+import Button from '@mui/material/Button';
 
-// function StartGame(){
-
-// }
 
 function App() {
   return (
@@ -25,6 +13,28 @@ function App() {
         </div>
       </header>
   );
+}
+class Menu extends React.Component{
+  render(){
+    return <div className = "menu">
+      <div class = "leftmenu"><img src={grelogo} alt="gre"></img><text><b>GRE Vocab</b></text></div>
+      <div class = "rightmenu">
+        <div class = "rightmenucontents">
+          <MenuItem label="Start game"/>
+          <MenuItem label = "Options"/>
+        </div>
+      </div>
+    </div>
+  }
+}
+class MenuItem extends React.Component{
+  constructor(props){
+    super(props);
+    this.label = props.label;
+  }
+render(){
+  return <Button variant = "contained" onClick={() => console.log('click')}>{this.label}</Button>
+  }
 }
 
 // class WordBlock extends React.Component{
@@ -38,7 +48,6 @@ function App() {
 //     return <button className = "wordblock"><text> {this.word} </text> </button>
 //   }
 // }
-
 
 
 export default App;
